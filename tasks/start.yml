@@ -1,2 +1,2 @@
 - name: start jumpserver
-  shell: /opt/jumpserver/jms start -d
+  shell: source /opt/py3/bin/activate && /opt/jumpserver/jms start -d
