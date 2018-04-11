@@ -9,4 +9,4 @@
   register: "install python {{python_version}} finished"
 
 - name: do python venv
-  shell: python36 -m venv /opt/py3 && source /opt/py3/bin/activate
+  shell: "{{python_version}} -m venv /opt/py3 && source /opt/py3/bin/activate"

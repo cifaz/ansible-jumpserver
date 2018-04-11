@@ -17,6 +17,7 @@ ansible-galaxy install cifaz.jumpserver
     - geerlingguy.mysql
     - {role: "jumpserver", tag: "jumpserver"}
 
+ *** 注: 如果需要数据库, 请先安装数据库和redis, 本playbook暂未直接安装 ***
 ```
 
 ###

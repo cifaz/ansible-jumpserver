@@ -1,11 +1,14 @@
-# emtpy
-
+# 安装python
 - import_tasks: installpython.yml
 
+# 下载jumpserver到/opt/jumpserver
 - import_tasks: down.yml
 
+# 安装yum/pip依赖
 - import_tasks: install-requirements.yml
 
+# 配置启动所需, 数据库, 数据, jumpserver的配置
 - import_tasks: configs.yml
 
+# 在python沙箱中启动
 - import_tasks: start.yml
