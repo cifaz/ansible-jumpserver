@@ -14,7 +14,7 @@
 - name: config jumpserver
   template:
     src: config.py.j2
-    dest: /opt/jumpserver/
+    dest: /opt/jumpserver/config.py
     backup: yes
 
 - name: generate database and datas
