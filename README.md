@@ -48,3 +48,13 @@ http://127.0.0.1:8080(默认, 修改参数的请自行修改)
 source /opt/py3/bin/activate && cd /opt/jumpserver/utils/ && /bin/bash make_migrations.sh
 
 ```
+
+License
+-------
+
+MIT
+
+Author Information
+------------------
+
+ccz <hanlin2531@163.com>
