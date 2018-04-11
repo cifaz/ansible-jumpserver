@@ -18,4 +18,4 @@
     backup: yes
 
 - name: generate database and datas
-  shell: source /opt/py3/bin/activate && cd /opt/jumpserver/utils/ && /bin/bash make_migrations.sh
+  shell: source /opt/py3/bin/activate && cd /opt/jumpserver/utils/ && /bin/bash make_migrations.sh && sleep 3
