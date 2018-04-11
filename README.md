@@ -3,7 +3,7 @@ cifaz.ansible-jumpserver
 
 ### 安装
 ```
-ansible-galaxy install cifaz.ansible-jumpserver
+ansible-galaxy install cifaz.jumpserver
 
 ```
 
