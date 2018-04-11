@@ -1,0 +1,21 @@
+# mysql && create database jumpserver default charset 'utf8'; && grant all on jumpserver.* to 'jumpserver'@'127.0.0.1' identified by 'somepassword';
+
+- name: create database jumperserver
+  mysql_db:
+    name: jumpserver
+
+- name: create user and privilages
+  mysql_user:
+    name: "{{db_username}}"
+    password: "{{db_passwd}}"
+    priv: "jumpserver.*:ALL,GRANT"
+    host: "%"
+
+- name: config jumpserver
+  template:
+    src: config.py.j2
+    dest: /opt/jumpserver/
+    backup: yes
+
+- name: generate database and datas
+  shell: source /opt/py3/bin/activate && cd /opt/jumpserver/utils/ && /bin/bash make_migrations.sh
