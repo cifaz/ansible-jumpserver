@@ -3,7 +3,7 @@
 - name: create database jumperserver
   mysql_db:
     name: jumpserver
-  when: jumpserver_remote_db == false
+  when: db_install_local == true
 
 - name: create database jumperserver on remote server
   mysql_db:
@@ -15,7 +15,7 @@
     encoding: utf-8
     name: jumpserver
     state: "present"
-  when: db_install_local == true
+  when: db_install_local == false
 
 - name: create user and privilages on remote server
   mysql_user:
@@ -29,7 +29,7 @@
     login_port: "{{ login_port }}"
     config_file: /etc/my.cnf
     encoding: utf-8
-  when: db_install_local == true
+  when: db_install_local == false
 
 - name: create user and privilages
   mysql_user:
@@ -37,7 +37,7 @@
     password: "{{ db_passwd }}"
     priv: "{{ db_name }}.*:ALL,GRANT"
     host: "%"
-  when: db_install_local == false
+  when: db_install_local == true
 
 - name: config jumpserver
   template:
