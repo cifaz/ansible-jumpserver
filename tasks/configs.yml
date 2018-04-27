@@ -11,6 +11,8 @@
     login_user: "{{ login_user }}"
     login_password: "{{ login_password }}"
     login_port: "{{ login_port }}"
+    config_file: /etc/my.cnf
+    encoding: utf-8
     name: jumpserver
     state: "present"
   when: db_install_local == true
@@ -25,6 +27,8 @@
     login_user: "{{ login_user }}"
     login_password: "{{ login_password }}"
     login_port: "{{ login_port }}"
+    config_file: /etc/my.cnf
+    encoding: utf-8
   when: db_install_local == true
 
 - name: create user and privilages on remote server
