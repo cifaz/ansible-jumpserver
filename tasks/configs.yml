@@ -3,7 +3,7 @@
 - name: create database jumperserver
   mysql_db:
     name: jumpserver
-  when: jumpserver_remote_db == 0
+  when: jumpserver_remote_db == true
 
 - name: create database jumperserver on remote server
   mysql_db:
@@ -12,7 +12,7 @@
     login_password: "{{ login_password }}"
     login_port: "{{ login_port }}"
     name: jumpserver
-  when: jumpserver_remote_db == 1
+  when: db_install_local == false
 
 - name: create user and privilages
   mysql_user:
@@ -24,7 +24,7 @@
     login_user: "{{ login_user }}"
     login_password: "{{ login_password }}"
     login_port: "{{ login_port }}"
-  when: jumpserver_remote_db == 0
+  when: db_install_local == true
 
 - name: create user and privilages on remote server
   mysql_user:
@@ -32,7 +32,7 @@
     password: "{{ db_passwd }}"
     priv: "{{ db_name }}.*:ALL,GRANT"
     host: "%"
-  when: jumpserver_remote_db == 1
+  when: db_install_local == false
 
 - name: config jumpserver
   template:
