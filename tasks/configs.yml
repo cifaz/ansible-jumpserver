@@ -17,7 +17,7 @@
     state: "present"
   when: db_install_local == true
 
-- name: create user and privilages
+- name: create user and privilages on remote server
   mysql_user:
     name: "{{ db_username }}"
     password: "{{ db_passwd }}"
@@ -31,7 +31,7 @@
     encoding: utf-8
   when: db_install_local == true
 
-- name: create user and privilages on remote server
+- name: create user and privilages
   mysql_user:
     name: "{{ db_username }}"
     password: "{{ db_passwd }}"
