@@ -12,6 +12,7 @@
     login_password: "{{ login_password }}"
     login_port: "{{ login_port }}"
     name: jumpserver
+    state: "present"
   when: db_install_local == true
 
 - name: create user and privilages
