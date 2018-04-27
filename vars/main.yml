@@ -9,6 +9,11 @@ db_port: 3306
 db_name: jumpserver
 db_username: jumpserver
 db_passwd: 123456
+# 如果不创建本地数据库, 使用远程数据库, 请填写远程数据库相关的用户名, 密码
+login_host: 127.0.0.1
+login_user: root
+login_password: root
+login_port: 3306
 
 # webserver
 http_bind_host: 0.0.0.0
