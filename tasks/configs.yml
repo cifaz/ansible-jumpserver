@@ -28,7 +28,6 @@
     login_password: "{{ login_password }}"
     login_port: "{{ login_port }}"
     config_file: /etc/my.cnf
-    encoding: utf8
   when: db_install_local == false
 
 - name: create user and privilages
