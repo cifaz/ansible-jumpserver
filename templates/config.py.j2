@@ -48,9 +48,9 @@ class Config:
     HTTP_LISTEN_PORT = 8080
 
     # Use Redis as broker for celery and web socket
-    REDIS_HOST = '127.0.0.1'
-    REDIS_PORT = 6379
-    REDIS_PASSWORD = ''
+    REDIS_HOST = '{{redis_host}}'
+    REDIS_PORT =  '{{redis_port}}'
+    REDIS_PASSWORD = '{{redis_password}}'
     BROKER_URL = 'redis://%(password)s%(host)s:%(port)s/3' % {
         'password': REDIS_PASSWORD,
         'host': REDIS_HOST,

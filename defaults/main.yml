@@ -1,2 +1,30 @@
 # emtpy
 ---
+python_version: python36
+
+# 如果为true, 则会在本地安装, 如果不是则使用远程, 此时不在本地或远程安装数据库
+db_install_local: true
+db_host: 127.0.0.1
+db_port: 3306
+db_name: jumpserver
+db_username: jumpserver
+db_passwd: 123456
+# 如果不创建本地数据库, 使用远程数据库, 请填写远程数据库相关的用户名, 密码
+login_host: 127.0.0.1
+login_user: root
+login_password: root
+login_port: 3306
+
+# webserver
+http_bind_host: 0.0.0.0
+http_listen_port: 8080
+
+# redis
+redis_host: 127.0.0.1
+redis_port: 6379
+redis_password:
+
+# sys
+debug: True
+# DEBUG, INFO, WARNING, ERROR, CRITICAL can set
+log_level: DEBUG
