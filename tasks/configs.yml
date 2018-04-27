@@ -12,7 +12,7 @@
     login_password: "{{ login_password }}"
     login_port: "{{ login_port }}"
     config_file: /etc/my.cnf
-    encoding: utf-8
+    encoding: utf8
     name: jumpserver
     state: "present"
   when: db_install_local == false
@@ -28,7 +28,7 @@
     login_password: "{{ login_password }}"
     login_port: "{{ login_port }}"
     config_file: /etc/my.cnf
-    encoding: utf-8
+    encoding: utf8
   when: db_install_local == false
 
 - name: create user and privilages
